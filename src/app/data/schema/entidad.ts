@@ -1,10 +1,12 @@
 export class Entidad{
     
     idEntidad: number;
+    idTipoDocumento: number;
     nombreTipoDocumento: string;
     nroDocumento: string;
     razonSocial: string;
     nombreComercial: string;
+    idTipoContribuyente: number;
     nombreTipoContribuyente: string;
     direccion: string;
     telefono: string;
@@ -12,10 +14,12 @@ export class Entidad{
 
     constructor(){
         this.idEntidad=0;
+        this.idTipoDocumento=0;
         this.nombreTipoDocumento="";
         this.nroDocumento="";
         this.razonSocial="";
         this.nombreComercial="";
+        this.idTipoContribuyente=0;
         this.nombreTipoContribuyente="";
         this.direccion="";
         this.telefono="";

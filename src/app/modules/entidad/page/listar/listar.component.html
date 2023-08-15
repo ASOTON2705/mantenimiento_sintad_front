@@ -1,1 +1,42 @@
-<p>listar works!</p>
+<div [style.display]="'flex'" [style.justifyContent]="'center'" [style.alignItems]="'center'">
+    <h1 class="fw-bold mb-0">Listar Entidades</h1>
+    <a class="btn btn-success mx-4" [routerLink]="['registrar']">Agregar</a>
+  </div>
+  <table class="table table-striped mt-5">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Tipo Documento</th>
+        <th scope="col">Número de Documento</th>
+        <th scope="col">Razón Social</th>
+        <th scope="col">Nombre Comercial</th>
+        <th scope="col">Tipo Contribuyente</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Estado</th>
+        <th [width]="'260px'">Acciones</th>
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entidad of entidades">
+        <td>{{entidad.nombreTipoDocumento}}</td>
+        <td>{{entidad.nroDocumento}}</td>
+        <td>{{entidad.razonSocial}}</td>
+        <td>{{entidad.nombreComercial}}</td>
+        <td>{{entidad.nombreTipoContribuyente}}</td>
+        <td>{{entidad.direccion}}</td>
+        <td>{{entidad.telefono}}</td>
+        <td>
+          <span *ngIf="entidad.estado === 0">Activo</span>
+          <span *ngIf="entidad.estado === 1">Inactivo</span>
+        </td>
+        <td [style.display]="'flex'" [style.justifyContent]="'space-around'">
+          <button (click)="editarEntidad(entidad)" class="btn btn-warning btn-margin-right">Actualizar</button>
+          <button (click)="eliminarEntidad(entidad)" class="btn btn-danger">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
